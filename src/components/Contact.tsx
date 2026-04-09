@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-
 export default function Contact() {
   return (
     <section id="contacto" className="py-32 bg-brand-surface relative overflow-hidden">
