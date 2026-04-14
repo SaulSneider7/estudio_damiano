@@ -1,56 +1,115 @@
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faVideo } from '@fortawesome/free-solid-svg-icons';
 
-export default function Videos() {
-  const videos = [
-    { title: "Optimización Fiscal 2024", category: "Tributario" },
-    { title: "Gestión de Planillas", category: "Laboral" },
-    { title: "Auditoría Preventiva", category: "Contable" },
-  ];
+const videos = [
+  {
+    title: "Introducción al Peritaje Contable Forense",
+    description: "Conozca la importancia del peritaje técnico en los procesos judiciales modernos.",
+    youtubeId: "v_1H6v_1H6A", // Placeholder ID
+    thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Auditoría Antifraude y Prevención",
+    description: "Técnicas avanzadas para la detección temprana de irregularidades financieras.",
+    youtubeId: "dQw4w9WgXcQ", // Placeholder ID
+    thumbnail: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Lavado de Activos: Casos de Estudio",
+    description: "Análisis de metodologías utilizadas en la determinación de origen ilícito de fondos.",
+    youtubeId: "v_1H6v_1H6A", // Placeholder ID
+    thumbnail: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+  }
+];
 
+export const Videos = () => {
   return (
-    <section id="videos" className="py-32 bg-brand-surface relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold font-bold mb-4 block">Contenido de Valor</span>
-            <h2 className="text-5xl md:text-7xl font-black text-brand-text">CÁPSULAS <br /><span className="gold-gradient italic">INFORMATIVAS</span></h2>
+    <section className="py-24 bg-white" id="videos">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <span className="h-px w-12 bg-tertiary-fixed"></span>
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-tertiary-fixed">Multimedia</span>
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-primary-container tracking-tighter mb-6">
+              Centro de <span className="text-tertiary-fixed italic font-light">Conocimiento</span>
+            </h2>
+            <p className="text-on-surface-variant font-light text-lg">
+              Explore nuestros recursos audiovisuales sobre auditoría forense, peritaje judicial y prevención de delitos financieros.
+            </p>
           </div>
-          <p className="text-brand-soft max-w-sm text-lg font-light">
-            Manténgase a la vanguardia con nuestro contenido exclusivo sobre las últimas tendencias del mercado.
-          </p>
+          <div className="hidden md:block">
+            <FontAwesomeIcon icon={faVideo} className="text-7xl text-surface-container-high opacity-20" />
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {videos.map((video, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {videos.map((video, index) => (
             <motion.div
-              key={idx}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group cursor-pointer"
+              transition={{ delay: index * 0.1 }}
+              className="group bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-surface-container-low"
             >
-              <div className="relative aspect-video bg-white rounded-3xl overflow-hidden mb-6 border border-black/5 shadow-sm">
+              <div className="relative aspect-video overflow-hidden">
                 <img 
-                  src={`https://picsum.photos/seed/video${idx}/800/450`} 
+                  src={video.thumbnail} 
                   alt={video.title}
-                  className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-brand-gold text-white rounded-full flex items-center justify-center text-xl shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
-                    <FontAwesomeIcon icon={faPlay} className="ml-1" />
+                <div className="absolute inset-0 bg-primary-container/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center shadow-2xl transform scale-75 group-hover:scale-100 transition-transform duration-500">
+                    <FontAwesomeIcon icon={faPlay} className="text-xl ml-1" />
                   </div>
                 </div>
+                <div className="absolute bottom-4 right-4 px-2 py-1 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold rounded">
+                  HD 1080p
+                </div>
               </div>
-              <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-2 block">{video.category}</span>
-              <h3 className="text-xl font-bold text-brand-text group-hover:text-brand-gold transition-colors">{video.title}</h3>
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-primary-container mb-3 group-hover:text-tertiary-fixed transition-colors">
+                  {video.title}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
+                  {video.description}
+                </p>
+                <button className="text-xs font-bold uppercase tracking-widest text-primary-container flex items-center gap-2 group/link">
+                  Ver video completo
+                  <span className="w-8 h-px bg-primary-container/20 group-hover/link:w-12 group-hover/link:bg-tertiary-fixed transition-all"></span>
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 p-10 bg-primary-container rounded-3xl text-center relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-tertiary-fixed/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          <h3 className="text-2xl font-bold text-white mb-4 relative z-10">¿Desea una capacitación para su equipo?</h3>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto relative z-10">Ofrecemos seminarios y talleres especializados en auditoría forense y prevención de fraude para instituciones públicas y privadas.</p>
+          <a 
+            href="https://wa.me/51962693186"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold rounded-full hover:scale-105 transition-transform relative z-10"
+          >
+            Solicitar Información
+            <FontAwesomeIcon icon={faVideo} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
-}
+};

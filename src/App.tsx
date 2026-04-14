@@ -1,35 +1,39 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Services from "./components/Services";
-import Advisory from "./components/Advisory";
-import Videos from "./components/Videos";
-import Bibliography from "./components/Bibliography";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
-import WhatsAppCTA from "./components/WhatsAppCTA";
-import CallCTA from "./components/CallCTA";
+import { WhatsAppButton } from "./components/WhatsAppButton";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { LogoCarousel } from "./components/LogoCarousel";
+import { Commitment } from "./components/Commitment";
+import { Stats } from "./components/Stats";
+import { Services } from "./components/Services";
+import { Videos } from "./components/Videos";
+import { Bibliography } from "./components/Bibliography";
+import { Advisory } from "./components/Advisory";
+import { Characteristics } from "./components/Characteristics";
+import { Features } from "./components/Features";
+import { ContactCTA } from "./components/ContactCTA";
+import { AvailabilityBanner } from "./components/AvailabilityBanner";
+import { Footer } from "./components/Footer";
+import { ExpertiseSection } from "./components/ExpertiseSection";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-brand-bg selection:bg-brand-gold/20">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <WhyChooseUs />
-        <Services />
-        <Advisory />
-        <Videos />
-        <Bibliography />
-        <WhatsAppCTA />
-        <CallCTA  />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen">
       <WhatsAppButton />
+      <Navbar />
+      <Hero />
+      <Commitment />
+      <LogoCarousel />
+      <Stats />
+      <ExpertiseSection />
+      <Services />
+      <Videos />
+      <Bibliography />
+      <Characteristics />
+      <Advisory />
+      <Features />
+      <AvailabilityBanner />
+      <ContactCTA />
+      <Footer />
     </div>
   );
 }

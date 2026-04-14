@@ -1,147 +1,198 @@
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileShield, faGavel, faShip, faHandHoldingDollar, faLandmark, faUserSecret, faCalculator, faHandshakeSlash, faUserTie, faCoins, faBuildingShield } from "@fortawesome/free-solid-svg-icons";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { 
+  faGavel, 
+  faShieldHalved, 
+  faMagnifyingGlass, 
+  faScaleBalanced, 
+  faPercent, 
+  faReceipt, 
+  faLock, 
+  faGlobe,
+  faBriefcase,
+  faArrowRight
+} from "@fortawesome/free-solid-svg-icons";
 
-export default function Services() {
-  const services = [
-    {
-      icon: faUserSecret,
-      title: "Peritaje Contable en Lavado de Activos",
-      desc: "Examina la legalidad a recursos de origen ilícito. Adquirir, resguardar, invertir, transformar, transportar, custodiar y administrar bienes o ganancias ilícitos.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Lavado de Activos."
-    },
-    {
-      icon: faBuildingShield,
-      title: "Peritaje Contable en Contrataciones del Estado",
-      desc: "El peritaje contable examina el presunto direccionamiento en las contrataciones públicas en agravio del estado.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Contrataciones del Estado."
-    },
-    {
-      icon: faShip,
-      title: "Peritaje Contable en Delitos Aduaneros",
-      desc: "Examina las infracciones aduaneras y las mercancías que son objeto de delito incautadas por el fiscal, quedando en custodia de la Administración Aduanera.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Delitos Aduaneros."
-    },
-    {
-      icon: faHandHoldingDollar,
-      title: "Peritaje Contable en Delitos Contra el Patrimonio",
-      desc: "Examina los delitos más comunes contra el patrimonio, como son el hurto, el robo, la estafa, las defraudaciones, la apropiación indebida o daños.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Delitos Contra el Patrimonio."
-    },
-    {
-      icon: faLandmark,
-      title: "Peritaje Contable en Extinción de Dominio",
-      desc: "Determina el desbalance patrimonial vinculado a delitos como lavado de activos, corrupción de funcionarios, crimen organizado y otros.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Extinción de Dominio."
-    },
-    {
-      icon: faGavel,
-      title: "Peritaje Contable Anticorrupción",
-      desc: "Examina y determina el presunto perjuicio económico en los delitos de corrupción de funcionarios.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable Anticorrupción."
-    },
-    {
-      icon: faFileShield,
-      title: "Peritaje Contable Tributario",
-      desc: "Elaboración de una prueba pericial motivado por la discrepancia de criterios entre la Administración Tributaria y la empresa.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable Tributario."
-    },
-    {
-      icon: faUserSecret,
-      title: "Auditoria Forense Antifraude",
-      desc: "Máxima especialización del Contador Público, que atiende de manera integral el Fraude, la Corrupción y el Lavado de Dinero.",
-      whatsapp: "Hola, me gustaría solicitar información sobre la Auditoria Forense Antifraude."
-    },
-    {
-      icon: faCalculator,
-      title: "Peritaje Contable para Cálculo de Intereses Legales",
-      desc: "Se utilizará cuando deba pagarse interés, sin haberse fijado la tasa, el deudor debe abonar el interés legal según el Código Civil.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable para Cálculo de Intereses Legales."
-    },
-    {
-      icon: faHandshakeSlash,
-      title: "Peritaje Contable para Deudas",
-      desc: "Estudia la obligación de devolver cuantía de dinero. El Perito analizará si las condiciones son legales y la clasificación del deudor.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable para Deudas."
-    },
-    {
-      icon: faUserTie,
-      title: "Peritaje Contable en Materia Laboral",
-      desc: "Se aplica en juicios laborales sobre reclamaciones de beneficios sociales, reintegro de sueldo o vacaciones, a fin de señalar el monto reclamado.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable en Materia Laboral."
-    },
-    {
-      icon: faCoins,
-      title: "Peritaje Contable Financiero",
-      desc: "Ofrecimiento de elementos de convicción aplicables a operaciones financieras indispensables para la solución de controversias en juicio.",
-      whatsapp: "Hola, me gustaría solicitar información sobre el Peritaje Contable Financiero."
-    }
-  ];
+const services = [
+  {
+    title: "Peritaje Contable en Lavado de Activos",
+    description: "Análisis exhaustivo de la legalidad de recursos. Identificamos el origen ilícito, resguardo y administración de bienes o ganancias bajo sospecha.",
+    icon: faLock,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDTNX9CVPHzN7CsIl3DtQbkytSkXLaZ-cvZ-iFAA-K-HdpPOjEwunY1w5dlXhtLAY_EwHMdmKTq4TImUEDlYGagLYqQxiiGKk-akDnj_eb9dlMHzbjv_tomyzY7SDXu00AjeJuZajMgbcMdDhg4O7G-GhdquaVRrdvpYbA7V4-NtmNUWgIbFV2pMble3s3ldlgNWnX32ZHTIi2zLiUjrgTBghHhP456Gf7RddLAi7N08RKVNJdZMZvAdPxmVseN6Ez2vPu4Nk4VOih8"
+  },
+  {
+    title: "Peritaje Contable en Contrataciones del Estado",
+    description: "Examen técnico de presuntos direccionamientos en licitaciones públicas y contrataciones en agravio del Estado Peruano.",
+    icon: faGavel,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMk5mNS0VWB2ngKmoZcWHOi6ZN8oTV5Hri-K1-2iAb77c-4AqXg_uzwbibUv0qioeSJxelJIv4nBQHQQ-KJj-E62inzkDJ-0hiMpsxNzqXQVsUw2ppogd7XEnblMcWvEWPHSKZ2ILsuN94PXzV2pAfx7P6IFPQt8FR4uIjObb_9VPo59LWY73iCFc1xTceQNfrKlbYwrC10p7gP5ntbKXsQDtqKsF6K6E5a570vfu2K0rUPBYjqyoMZb7u6v5ioEU9Ocflyg7PKlAx"
+  },
+  {
+    title: "Peritaje Contable en Delitos Aduaneros",
+    description: "Determinación de infracciones aduaneras y valoración de mercancías incautadas en procesos de contrabando y defraudación.",
+    icon: faGlobe,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-wemzT2MNPrQ9jEeOVy2c0P4a-HQ0zwYBNko86Pw4_cDP708-ApHDGaSQmb2_KzhuFQWhUN5JjczNJuuuF79ud0BP5MBPz2mt8Z8qqsT-H1kiJgoOfoXF3FsxgcRCpY6wxrPdk5tH61W3UoGGlA5hzMd9dmWnrCNPuIRgX6P8xs0y0eDAA8UEAY95179Kk0U6H7NfWx0xhP62h0hkei1t7u1929wngxhKJp5mxdPHh69Xj4wHAxev4A7vE4F1a77-tRlwlfvmVJSL"
+  },
+  {
+    title: "Peritaje Contable en Delitos Contra el Patrimonio",
+    description: "Evaluación de daños en delitos de hurto, robo, estafa, apropiación indebida y otras defraudaciones económicas.",
+    icon: faShieldHalved,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDo0Q5Odg0JVPnulLtXMmpoBnpPX1ahN4F0imysLHS6LSVJ4z8YqdDjTPOk93RSZrQ8_ibZeJgyHC1cvukHK0TqCxnfSejqKqaDQ5H8CHspSycCal6J0h9zyisCSeCW7nBkxMDeJeYS7et2QOwtYst-pPCuS5af8RLGhVlRXc0pOu8WGmgvtz8N-zeMZjlT-0R6exSLb5aQraEps9Y8LqHGY0Y1ncvMhwGf8yOCya8KneDsNGtpIJMEL5dIrSF6MtEE2w2I3dsipCzl"
+  },
+  {
+    title: "Peritaje Contable en Extinción de Dominio",
+    description: "Determinación técnica de desbalance patrimonial vinculado a actividades ilícitas para procesos de pérdida de dominio.",
+    icon: faScaleBalanced,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAv6uDBykGN9UgcNxx9T-ygQCpF_i9bG_8y2E5X3gZzSMXWyDfEeZS9ZRLY-GARx9IPyBWNO5scH4BG7WY37YwBf3Uh054Gw6vmw0Mg1GhKTMA2fG2gep2voM8WPEeFueOh_I4Tq7rEmwiaogk-BfM8GTpAezEe7BFSZDPK-qgb2HL6QLzeM3dMmCC_TbYEk5efpmxsxyESCqgFP2H9mp9LWN1VVWW74InDlNSgyGuNrEZRTsjJ6ECxASfGARwpEgU941ULWJY2fdlI"
+  },
+  {
+    title: "Peritaje Contable Anticorrupción",
+    description: "Cuantificación precisa del perjuicio económico en delitos de corrupción de funcionarios y malversación de fondos.",
+    icon: faScaleBalanced,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAK_oLqBF4O9QAztjQ12vPnccFZyXXoXNas4i_Ej6lNLqKyLeH3k8Zb86ATrCk2PKy0GEYw7G6H9RpcKUpOAy_gFSaHmARofGslMFixKre2nHdaNGviPqPVakE7xV2GE4GzxDzSG3mdy2MGyzZj6NGlsxCkhiDQvS97pLOenkB-52ywtVu1Hmar3nfnxRMTrcr_6fhBTDrNfH8_SZEnp6dUlqxuYlcWr7XM1WpiaB04-MZGhMnkku9qVRQbtcuGB2XlzLBR4lcHJUbz"
+  },
+  {
+    title: "Peritaje Contable Tributario",
+    description: "Elaboración de pruebas periciales ante discrepancias con la Administración Tributaria (SUNAT) y procesos contenciosos.",
+    icon: faReceipt,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBdoXgLQSTa5QW8pAnbMEQlVca0zNQAxYtg9tz1OCrpfWYFI9Qp8UMeMrGCeHecntKOz9CozP9bFDYJ2Trt6qNcKfopn9CPhRLpBIFEWQdE9Rh42Z-MnJEphHQucM-5F8TR4PoWIi7e2b7DbQt5u5TymI05EorEkHFa9gkSv7t-oaJa1qBdeiIRgteXgPGbZ5ebNuMSiQ5rzUR9F8IUyIm9SnhMoZvJ-PdIEKVPgLwaNk5t7liTWNXfjbR4h7oblvkqUCaC3rAK91a2"
+  },
+  {
+    title: "Auditoria Forense Antifraude",
+    description: "Especialización integral para la detección y prevención de Fraude Corporativo, Corrupción y Lavado de Dinero.",
+    icon: faMagnifyingGlass,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzD63oRDUHNUpuTuxCG0qhKRYxi_IVeFNEWM-84YLui_5cS4ZZ-b-iihn4N9eQIFU-23ju1tkPD_WosWznJYKsM125LrAyaPoy1Lkz_6fR86w--Xd3fXvqyI8JDLTkgMw2XVwSxTXDE-jcO7tAAiRSFrIR17jhzzDi5l5ZThXWtcj0ue6Mm8aeg33UaurT9jpYikoKyns_P8c33kBtMkXTOw454XqTbOq6EB1yNrMBWQN71HVHWSGCv8cVK22YXxD4Cl3m-0iTf2Tv"
+  },
+  {
+    title: "Peritaje Contable para Cálculo de Intereses Legales",
+    description: "Cálculo técnico-matemático de intereses legales y compensatorios bajo normativa del Código Civil.",
+    icon: faPercent,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbVMUPo83cwY9-A2KTWbk9DvIs-pwsDpra4hv414RbOzVCEbjAyZoagjwNMBXMT9NtjcXSL7OKBBuAVgnDk4n7Q6nvuDzAr8njNZDzlfmjwJJvllXlyqlJs7O8LI6QpKDo84F6gXj6Wl5cTGcn9zkTr-PqMItivP55wkWOusn0K7TIkByIACZNayVethRvClM878-mtfzNji-5ZQ8xgrbFQ2mQ5ghxeAdNZGbjYpQXhUSd5Na7bC1y_s8xwgYDikpLOeE4x7uXWBPJ"
+  }
+];
 
-  const getWhatsAppLink = (text: string) => {
-    return `https://wa.me/51962693186?text=${encodeURIComponent(text)}`;
+export const Services = () => {
+  const handleRequestService = (serviceTitle: string) => {
+    const phoneNumber = "51962693186";
+    const message = encodeURIComponent(`Hola, me gustaría solicitar más información sobre el servicio de: ${serviceTitle}`);
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
   return (
-    <section id="servicios" className="py-32 bg-brand-bg relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold font-bold mb-4 block">Nuestras Especialidades</span>
-            <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight text-brand-text">
-              SERVICIOS DE <br />
-              <span className="gold-gradient italic">ALTA ESPECIALIZACIÓN</span>
+    <section className="py-32 bg-[#F8FAFC] relative overflow-hidden" id="servicios">
+      {/* Background Accents */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-tertiary-fixed/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-primary-container/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <span className="h-px w-12 bg-tertiary-fixed"></span>
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-tertiary-fixed">Nuestra Especialidad</span>
+            </motion.div>
+            <h2 className="text-5xl md:text-6xl font-extrabold text-[#001D36] tracking-tighter mb-8 leading-[1.1]">
+              Servicios de <span className="text-tertiary-fixed italic font-light">Especialización</span> Forense
             </h2>
-            <p className="text-brand-soft text-lg max-w-2xl mx-auto font-light">
-              Ofrecemos peritajes contables de precisión quirúrgica para la resolución de controversias legales y financieras de alta complejidad.
+            <p className="text-xl text-slate-600 font-light leading-relaxed max-w-2xl">
+              Análisis técnico-contable de alta precisión para sustentar procesos legales complejos ante entidades judiciales y corporativas.
             </p>
-          </motion.div>
+          </div>
+          <div className="hidden lg:block relative">
+            <span className="text-[12rem] font-black text-slate-200/50 select-none leading-none tracking-tighter">
+              EXPERT
+            </span>
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-tertiary-fixed/20 -translate-y-1/2"></div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, idx) => (
-            <motion.div
-              key={idx}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div 
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05 }}
               viewport={{ once: true }}
-              className="group p-1 bg-gradient-to-br from-black/5 to-transparent rounded-[2rem] hover:from-brand-gold/40 transition-all duration-500 shadow-lg"
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group relative bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col h-full"
             >
-              <div className="bg-white p-8 rounded-[1.9rem] h-full flex flex-col">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-14 h-14 bg-brand-bg rounded-2xl flex items-center justify-center text-brand-gold text-xl group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
-                    <FontAwesomeIcon icon={service.icon} />
-                  </div>
-                  <div className="text-3xl font-black text-black/5">0{idx + 1}</div>
-                </div>
+              {/* Card Image Section */}
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001D36]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
                 
-                <h3 className="text-xl font-bold mb-4 text-brand-text leading-tight group-hover:text-brand-gold transition-colors">{service.title}</h3>
-                <p className="text-brand-soft text-sm mb-8 flex-grow leading-relaxed font-light">
-                  {service.desc}
+                {/* Floating Icon */}
+                <div className="absolute top-6 left-6 w-14 h-14 bg-white rounded-2xl shadow-xl flex items-center justify-center text-[#001D36] transform -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                  <FontAwesomeIcon icon={service.icon} className="text-2xl" />
+                </div>
+
+                {/* Service Tag */}
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-widest rounded-full">
+                    Forense
+                  </span>
+                </div>
+              </div>
+
+              {/* Card Content Section */}
+              <div className="p-10 flex flex-col flex-grow relative">
+                {/* Decorative Number */}
+                <span className="absolute top-6 right-10 text-6xl font-black text-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 select-none">
+                  0{index + 1}
+                </span>
+
+                <h3 className="text-2xl font-bold text-[#001D36] mb-4 leading-tight group-hover:text-tertiary-fixed transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-slate-500 leading-relaxed mb-10 flex-grow font-medium text-[15px]">
+                  {service.description}
                 </p>
                 
-                <motion.a
-                  href={getWhatsAppLink(service.whatsapp)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center gap-3 w-full py-4 bg-brand-bg border border-brand-gold/20 text-brand-gold rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all duration-300"
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} className="text-lg" />
-                  Solicitar Servicio
-                </motion.a>
+                <div className="mt-auto">
+                  <button 
+                    onClick={() => handleRequestService(service.title)}
+                    className="group/btn relative w-full py-5 bg-[#001D36] text-white font-bold text-xs uppercase tracking-[0.2em] rounded-2xl overflow-hidden transition-all duration-300 hover:bg-tertiary-fixed hover:text-on-tertiary-fixed-variant shadow-lg hover:shadow-tertiary-fixed/30"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      Consultar Especialista
+                      <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                    </span>
+                  </button>
+                </div>
               </div>
+
+              {/* Hover Border Effect */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-tertiary-fixed/20 rounded-3xl pointer-events-none transition-colors duration-500"></div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24 text-center"
+        >
+          <p className="text-slate-400 text-sm font-bold uppercase tracking-[0.4em] mb-8">¿No encuentra el servicio que busca?</p>
+          <a 
+            href="https://wa.me/51962693186"
+            className="inline-flex items-center gap-4 px-12 py-6 bg-white border-2 border-slate-200 text-[#001D36] font-bold rounded-full hover:border-tertiary-fixed hover:text-tertiary-fixed transition-all duration-300 shadow-sm hover:shadow-xl"
+          >
+            <FontAwesomeIcon icon={faBriefcase} />
+            Solicitar Evaluación Personalizada
+          </a>
+        </motion.div>
       </div>
     </section>
   );
-}
+};

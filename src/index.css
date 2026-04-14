@@ -1,60 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #FDFCFB;
-  --color-brand-surface: #FFFFFF;
-  --color-brand-text: #0F172A;
-  --color-brand-soft: #64748B;
-  --color-brand-red: #DC2626;
-  --color-brand-gold: #B45309;
-  --color-brand-accent: #1E40AF;
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Work Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
-
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-  --animate-bounce-slow: bounce-slow 4s ease-in-out infinite;
-
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  --animate-shimmer: shimmer 2s infinite;
-}
-
-html {
-  @apply scroll-smooth;
+  --color-primary-container: #101b30;
+  --color-surface: #f8f9ff;
+  --color-surface-container-low: #eef4ff;
+  --color-surface-container-high: #dbe9ff;
+  --color-surface-container-highest: #d1e4ff;
+  --color-tertiary-fixed: #d4a352;
+  --color-on-tertiary-fixed-variant: #5d4201;
+  --color-on-surface-variant: #44474c;
 }
 
 @layer base {
   body {
-    @apply bg-brand-bg text-brand-text font-sans antialiased;
+    @apply font-body bg-surface text-primary-container;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold tracking-tight;
+  h1, h2, h3, h4 {
+    @apply font-headline;
   }
 }
 
-.glass-card {
-  @apply bg-white/70 backdrop-blur-xl border border-black/5 shadow-xl;
+html {
+  scroll-behavior: smooth;
 }
 
-.gold-gradient {
-  @apply bg-gradient-to-r from-brand-gold to-amber-600 bg-clip-text text-transparent;
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md;
 }
 
-.section-padding {
-  @apply py-32 px-6 md:px-12 lg:px-24;
+.hanging-indent {
+  @apply pl-14 relative;
 }
 
-.btn-primary {
-  @apply bg-brand-gold text-brand-bg px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.3)];
-}
-
-.btn-outline {
-  @apply border-2 border-brand-gold/50 text-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-bg transition-all duration-300;
+.icon-anchor {
+  @apply absolute left-0 top-1;
 }

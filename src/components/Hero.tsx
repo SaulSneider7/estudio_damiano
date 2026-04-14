@@ -1,65 +1,76 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export default function Hero() {
+export const Hero = () => {
+  const { scrollY } = useScroll();
+
+  const imageY = useTransform(scrollY, [0, 800], [0, 300]);
+  const overlayY = useTransform(scrollY, [0, 800], [0, 100]);
+
   return (
-    <section id="nosotros" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-bg">
-      {/* Background Image with Light Overlay */}
+    <header className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary-container">
       <div className="absolute inset-0 z-0">
-        <motion.img 
-          initial={{ scale: 1.1, opacity: 1 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
-          alt="Modern Business Architecture" 
-          className="w-full h-full object-cover"
+        <motion.img
+          src="/hero.webp"
+          alt="Oficina de lujo"
           referrerPolicy="no-referrer"
+          style={{ y: imageY }}
+          className="w-full h-[115%] object-cover will-change-transform"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/85 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-bg z-10"></div>
+
+        <motion.div
+          style={{ y: overlayY }}
+          className="absolute inset-0 bg-gradient-to-b from-primary-container/60 via-primary-container/40 to-primary-container/80"
+        />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+      <div className="max-w-7xl mx-auto px-8 relative z-10 w-full flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-4xl flex flex-col items-center"
+        >
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-bold tracking-[0.3em] uppercase text-tertiary-fixed border border-tertiary-fixed/30 rounded-full bg-tertiary-fixed/5"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl mb-10 leading-[0.9] font-black text-brand-text tracking-tighter">
-              LIDERANDO <br />
-              <span className="gold-gradient italic drop-shadow-sm">EL FUTURO</span> <br />
-              FINANCIERO
-            </h1>
-            
-            <p className="text-brand-soft text-xl md:text-2xl leading-relaxed mb-14 max-w-2xl mx-auto font-light">
-              En <span className="text-brand-text font-bold">Estudio Damiano & Asociados</span>, redefinimos el éxito. Estrategia contable, tributaria y legal con un enfoque disruptivo y de alta precisión.
-            </p>
+            <span className="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+            Consultoría de Elite
+          </motion.span>
 
-            <div className="flex flex-wrap justify-center gap-8">
-              <motion.a 
-                whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(180, 83, 9, 0.4)" }}
-                whileTap={{ scale: 0.95 }}
-                href="#servicios" 
-                className="btn-primary relative overflow-hidden group flex items-center gap-4 rounded-2xl px-12 py-6 text-xl font-black tracking-tight bg-brand-gold text-white hover:bg-brand-gold/90 transition-all duration-300"
-              >
-                <span className="relative z-10">Nuestra Propuesta</span>
-                <FontAwesomeIcon icon={faArrowRight} className="relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-              </motion.a>
-              <motion.a 
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(15, 23, 42, 0.05)", borderColor: "#B45309" }}
-                whileTap={{ scale: 0.95 }}
-                href="#videos" 
-                className="btn-outline flex items-center gap-4 rounded-2xl px-12 py-6 text-xl font-black tracking-tight border-2 border-brand-gold text-brand-gold transition-all duration-300"
-              >
-                <FontAwesomeIcon icon={faPlay} /> Ver Metodología
-              </motion.a>
-            </div>
-          </motion.div>
-        </div>
+          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter text-white leading-[0.9] mb-8">
+            Justicia <br />
+            <span className="text-tertiary-fixed italic font-light">Contable</span> <br />
+            de Precisión
+          </h1>
+
+          <p className="text-xl md:text-2xl text-slate-200 font-light leading-relaxed mb-12 max-w-2xl">
+            Especialistas en peritaje forense y auditoría antifraude para casos de alta complejidad legal y financiera.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6">
+            <a
+              href="https://wa.me/51962693186"
+              className="group px-10 py-5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold rounded-full shadow-2xl hover:shadow-tertiary-fixed/20 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+            >
+              Consulta WhatsApp
+              <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
+            </a>
+
+            <a
+              href="#servicios"
+              className="group px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3"
+            >
+              Ver Servicios
+              <FontAwesomeIcon icon={faArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </motion.div>
       </div>
-    </section>
+    </header>
   );
-}
+};
