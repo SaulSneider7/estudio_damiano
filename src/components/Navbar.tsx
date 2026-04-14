@@ -57,7 +57,7 @@ export const Navbar = () => {
       </div>
 
       {/* Main Nav */}
-      <div className={`bg-white relative transition-all duration-300 ${isScrolled ? "py-3" : "py-5"}`}>
+      <div className={`bg-white relative transition-all duration-300 ${isScrolled ? "py-0" : "py-0"}`}>
         <motion.div 
           className="absolute bottom-0 left-0 right-0 h-[2px] bg-tertiary-fixed origin-left z-50"
           style={{ scaleX }}
@@ -65,13 +65,12 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-8 flex items-center">
           {/* Logo - Left Aligned */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex flex-col group">
-              <span className="text-xl md:text-2xl font-extrabold tracking-tighter text-primary-container font-headline uppercase leading-none group-hover:text-on-surface-variant transition-colors">
-                Damiano
-              </span>
-              <span className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] text-on-surface-variant uppercase mt-1">
-                & Asociados
-              </span>
+            <a href="#" className="group flex items-center">
+              <img
+                src="/logo.webp"
+                alt="Logo"
+                className="w-24 md:w-24 md:h-24 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
           </div>
 
@@ -81,10 +80,10 @@ export const Navbar = () => {
           {/* Desktop Links - Right Aligned */}
           <div className="hidden lg:flex gap-8 items-center">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.name}
-                href={link.href} 
-                className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary-container transition-colors relative group"
+                href={link.href}
+                className="text-sm xl:text-[15px] font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary-container transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tertiary-fixed transition-all duration-300 group-hover:w-full"></span>
