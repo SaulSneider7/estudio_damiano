@@ -71,7 +71,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 group">
                 <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-tertiary-fixed shrink-0" />
-                <a href="tel:+51962693186" className="text-sm text-slate-400 group-hover:text-white transition-colors">
+                <a href="tel:+51945390187" className="text-sm text-slate-400 group-hover:text-white transition-colors">
                   +51 962 693 186
                 </a>
               </li>

@@ -18,12 +18,12 @@ export const Commitment = () => {
           Reciba una orientación personalizada inmediata para su caso. Nuestros expertos están listos para atenderle.
         </p>
         <a
-          href="tel:+51962693186"
+          href="tel:+51945390187"
           className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D1B2A] text-white font-bold rounded shadow-xl hover:scale-105 transition-transform uppercase tracking-widest text-base group"
         >
           Llamar Ahora
           <span className="text-amber-400 group-hover:text-white transition-colors">
-            +51 962 693 186
+            +51 945 390 187
           </span>
         </a>
       </div>

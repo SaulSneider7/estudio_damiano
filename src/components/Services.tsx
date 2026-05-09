@@ -72,7 +72,7 @@ const services = [
 
 export const Services = () => {
   const handleRequestService = (serviceTitle: string) => {
-    const phoneNumber = "51962693186";
+    const phoneNumber = "51945390187";
     const message = encodeURIComponent(`Hola, me gustaría solicitar más información sobre el servicio de: ${serviceTitle}`);
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
@@ -185,7 +185,7 @@ export const Services = () => {
         >
           <p className="text-slate-400 text-sm font-bold uppercase tracking-[0.4em] mb-8">¿No encuentra el servicio que busca?</p>
           <a 
-            href="https://wa.me/51962693186"
+            href="https://wa.me/51945390187"
             className="inline-flex items-center gap-4 px-12 py-6 bg-white border-2 border-slate-200 text-[#001D36] font-bold rounded-full hover:border-tertiary-fixed hover:text-tertiary-fixed transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <FontAwesomeIcon icon={faBriefcase} />

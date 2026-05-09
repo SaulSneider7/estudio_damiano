@@ -18,7 +18,7 @@ export default function Contact() {
           
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { icon: faPhone, label: "Línea Directa", value: "+51 962 693 186", href: "tel:+51962693186" },
+              { icon: faPhone, label: "Línea Directa", value: "+51 962 693 186", href: "tel:+51945390187" },
               { icon: faEnvelope, label: "Correo Corporativo", value: "estudiodamianoasociados@gmail.com", href: "mailto:estudiodamianoasociados@gmail.com" },
               { icon: faMapMarkerAlt, label: "Sede Central", value: "Elmer Faucett 330 - San Miguel, Lima", href: "#" }
             ].map((item, i) => (

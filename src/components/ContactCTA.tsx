@@ -38,7 +38,7 @@ export const ContactCTA = () => {
               </div>
             </div>
             <a 
-              href="https://wa.me/51962693186"
+              href="https://wa.me/51945390187"
               className="inline-flex items-center gap-3 px-10 py-5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold rounded shadow-lg hover:scale-105 transition-transform uppercase tracking-wider text-sm"
             >
               Iniciar Consulta Ahora

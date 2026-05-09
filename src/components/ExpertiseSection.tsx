@@ -82,10 +82,10 @@ export const ExpertiseSection = () => {
               >
                 <div className="flex items-center gap-3 text-tertiary-fixed">
                   <FontAwesomeIcon icon={faBuilding} className="text-xl" />
-                  <h3 className="font-black uppercase tracking-widest text-sm">CONSTITUCIÓN DE EMPRESAS</h3>
+                  <h3 className="font-black uppercase tracking-widest text-sm">SERVICIOS CONTABLES</h3>
                 </div>
                 <ul className="space-y-2">
-                  {["Formalización rápida", "Modificación de estatutos", "Incremento patrimonial", "Transformación y extinción de empresas"].map((item, i) => (
+                  {["Declaraciones mensuales", "Declaracion anuales", "Planeamiento tributario", "Incrementos patrimoniales no justificados"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-on-surface-variant">
                       <FontAwesomeIcon icon={faCheckCircle} className="text-tertiary-fixed text-[10px]" />
                       {item}
@@ -125,7 +125,7 @@ export const ExpertiseSection = () => {
                   San Miguel | Andahuaylas
                 </div>
                 <a 
-                  href="https://wa.me/51962693186"
+                  href="https://wa.me/51945390187"
                   className="flex items-center gap-2 text-sm font-black text-tertiary-fixed hover:underline"
                 >
                   <FontAwesomeIcon icon={faPhone} />

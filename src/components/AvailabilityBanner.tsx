@@ -9,7 +9,7 @@ export const AvailabilityBanner = () => {
           Estamos siempre disponibles
         </h2>
         <a 
-          href="tel:+51962693186"
+          href="tel:+51945390187"
           className="flex items-center gap-4 px-8 py-4 bg-primary-container text-white rounded-full font-bold shadow-xl hover:scale-105 transition-transform active:scale-95"
         >
           <div className="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary-container">

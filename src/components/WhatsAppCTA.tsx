@@ -33,7 +33,7 @@ export default function WhatsAppCTA() {
           </p>
 
           <motion.a
-            href="https://wa.me/51962693186"
+            href="https://wa.me/51945390187"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(37, 211, 102, 0.3)" }}

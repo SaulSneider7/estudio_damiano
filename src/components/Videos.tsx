@@ -102,7 +102,7 @@ export const Videos = () => {
           <h3 className="text-2xl font-bold text-white mb-4 relative z-10">¿Desea una capacitación para su equipo?</h3>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto relative z-10">Ofrecemos seminarios y talleres especializados en auditoría forense y prevención de fraude para instituciones públicas y privadas.</p>
           <a 
-            href="https://wa.me/51962693186"
+            href="https://wa.me/51945390187"
             className="inline-flex items-center gap-3 px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold rounded-full hover:scale-105 transition-transform relative z-10"
           >
             Solicitar Información

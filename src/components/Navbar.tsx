@@ -47,7 +47,7 @@ export const Navbar = () => {
               <span>+51 962 693 186</span>
             </div>
             <a 
-              href="tel:+51962693186"
+              href="tel:+51945390187"
               className="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded hover:bg-white transition-colors"
             >
               Llamar Ahora
@@ -90,7 +90,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a 
-              href="https://wa.me/51962693186"
+              href="https://wa.me/51945390187"
               className="ml-4 px-6 py-2.5 bg-primary-container text-white text-[10px] font-bold tracking-widest uppercase rounded-full hover:bg-black transition-all transform active:scale-95 shadow-md hover:shadow-xl flex items-center gap-2"
             >
               <FontAwesomeIcon icon={faPhone} className="w-3 h-3 text-tertiary-fixed" />
@@ -144,7 +144,7 @@ export const Navbar = () => {
                   </motion.a>
                 ))}
                 <motion.a 
-                  href="https://wa.me/51962693186"
+                  href="https://wa.me/51945390187"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}

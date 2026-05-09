@@ -43,18 +43,18 @@ export const Hero = () => {
           </motion.span>
 
           <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter text-white leading-[0.9] mb-8">
-            Justicia <br />
+            Estudio <br />
             <span className="text-tertiary-fixed italic font-light">Contable</span> <br />
-            de Precisión
+            y Forense
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-200 font-light leading-relaxed mb-12 max-w-2xl">
-            Especialistas en peritaje forense y auditoría antifraude para casos de alta complejidad legal y financiera.
+            Especialistas en peritaje contable y forense, auditor&iacute;a antifraude para casos de alta complejidad legal y financiera.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
             <a
-              href="https://wa.me/51962693186"
+              href="https://wa.me/51945390187"
               className="group px-10 py-5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold rounded-full shadow-2xl hover:shadow-tertiary-fixed/20 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               Consulta WhatsApp
